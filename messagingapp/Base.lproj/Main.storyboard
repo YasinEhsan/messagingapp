@@ -19,22 +19,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ncv-Rc-M0y">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="39" id="qvd-0a-a01">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="39"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qvd-0a-a01" id="OKM-nY-2Hb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="38.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ncv-Rc-M0y" secondAttribute="bottom" id="T2x-2F-Z11"/>
                             <constraint firstItem="Ncv-Rc-M0y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wzr-yp-Jgc"/>
-                            <constraint firstItem="Ncv-Rc-M0y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZHO-9t-bya"/>
+                            <constraint firstAttribute="bottom" secondItem="Ncv-Rc-M0y" secondAttribute="bottom" id="Xq7-MY-JAJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ncv-Rc-M0y" secondAttribute="trailing" id="ccj-wD-nFk"/>
+                            <constraint firstItem="Ncv-Rc-M0y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lt6-G7-Gum"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="H7g-zM-hrC"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="Yn1-E0-QB6">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="Q1K-8O-UnE">
                             <connections>
@@ -43,10 +51,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="Ncv-Rc-M0y" id="Dfp-ud-9vm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.79999999999995" y="-564.46776611694156"/>
+            <point key="canvasLocation" x="928.79999999999995" y="-564.53201970443354"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="zHa-Or-0JF">
@@ -61,7 +72,11 @@
                                 <items>
                                     <navigationItem title="Compose" id="ML3-OV-2t5">
                                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="trash" id="fxo-3s-3lO"/>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="dy8-AO-2Xa"/>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="dy8-AO-2Xa">
+                                            <connections>
+                                                <action selector="addPosr:" destination="0vC-kz-g4K" id="Bkj-XY-BKk"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -84,6 +99,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BmD-uS-wFe"/>
                     </view>
+                    <connections>
+                        <outlet property="textViw" destination="YUz-aC-t92" id="nHm-Zn-CnU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zsu-dR-jXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

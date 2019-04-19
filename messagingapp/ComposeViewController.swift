@@ -10,13 +10,27 @@ import UIKit
 
 class ComposeViewController: UIViewController {
 
+    @IBOutlet weak var textViw: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func addPosr(_ sender: Any) {
+        //todo: post the data to firebase
+        
+        // dismiss the popover
+        presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func cancelPost(_ sender: Any) {
+        
+        // dismiss the popover
+        presentingViewController?.dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
