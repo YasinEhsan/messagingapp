@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="byq-Yd-hkg">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,16 +15,79 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="messagingapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ncv-Rc-M0y">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ncv-Rc-M0y" secondAttribute="bottom" id="T2x-2F-Z11"/>
+                            <constraint firstItem="Ncv-Rc-M0y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wzr-yp-Jgc"/>
+                            <constraint firstItem="Ncv-Rc-M0y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZHO-9t-bya"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ncv-Rc-M0y" secondAttribute="trailing" id="ccj-wD-nFk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Yn1-E0-QB6"/>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="H7g-zM-hrC"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="Yn1-E0-QB6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="Q1K-8O-UnE">
+                            <connections>
+                                <segue destination="0vC-kz-g4K" kind="presentation" id="2yv-Ol-aDe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072.8" y="133.5832083958021"/>
+            <point key="canvasLocation" x="928.79999999999995" y="-564.46776611694156"/>
+        </scene>
+        <!--Compose View Controller-->
+        <scene sceneID="zHa-Or-0JF">
+            <objects>
+                <viewController id="0vC-kz-g4K" customClass="ComposeViewController" customModule="messagingapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zej-jF-WT3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uuj-AL-RsG">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Compose" id="ML3-OV-2t5">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="trash" id="fxo-3s-3lO"/>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="dy8-AO-2Xa"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YUz-aC-t92">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YUz-aC-t92" firstAttribute="leading" secondItem="BmD-uS-wFe" secondAttribute="leading" id="JLv-PR-53U"/>
+                            <constraint firstItem="uuj-AL-RsG" firstAttribute="leading" secondItem="BmD-uS-wFe" secondAttribute="leading" id="KhH-3B-NWL"/>
+                            <constraint firstItem="uuj-AL-RsG" firstAttribute="trailing" secondItem="BmD-uS-wFe" secondAttribute="trailing" id="PVa-1h-Ifx"/>
+                            <constraint firstItem="BmD-uS-wFe" firstAttribute="bottom" secondItem="YUz-aC-t92" secondAttribute="bottom" id="a5s-md-dtd"/>
+                            <constraint firstItem="uuj-AL-RsG" firstAttribute="top" secondItem="BmD-uS-wFe" secondAttribute="top" id="cPx-oc-Yx6"/>
+                            <constraint firstItem="YUz-aC-t92" firstAttribute="top" secondItem="uuj-AL-RsG" secondAttribute="bottom" id="dU1-Wd-qeY"/>
+                            <constraint firstItem="BmD-uS-wFe" firstAttribute="trailing" secondItem="YUz-aC-t92" secondAttribute="trailing" id="rv1-oO-zA9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BmD-uS-wFe"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zsu-dR-jXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1679" y="-564"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CNn-Hp-fOY">
@@ -32,7 +95,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="byq-Yd-hkg" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="akh-5f-SeP">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
