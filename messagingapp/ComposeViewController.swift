@@ -26,7 +26,7 @@ class ComposeViewController: UIViewController {
     }
     
     @IBAction func addPosr(_ sender: Any) {
-        //todo: post the data to firebase
+        //todo: post the data to firebase. this is where a new level is added. A new form of data "posts"
         ref.child("Posts").childByAutoId().setValue(textViw.text)
         
         // dismiss the popover

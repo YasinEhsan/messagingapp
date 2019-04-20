@@ -1,6 +1,12 @@
 # messagingapp
 Learning Firebase thru Youtube tutorial.
 
+__Features__ Used breakpoints
+
+__Takeaways__ 
+
+__Challenges__ 
+
 ## [Video Link](https://www.youtube.com/watch?v=PMbqo7ue_u0&list=PLMRqhzcHGw1ZRUB86rmNqG15Sr5jV-2NU&index=1)
 
 ## Notes
@@ -12,4 +18,10 @@ Learning Firebase thru Youtube tutorial.
 
 ## Useful Links
 - [Read and write firebase real time database docs](https://firebase.google.com/docs/database/ios/read-and-write?authuser=0)
-- 
+-
+
+
+## Coolest new code learned 
+```Swift
+
+```
