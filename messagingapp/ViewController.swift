@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     
     var ref: DatabaseReference!
-    var refHandle: DatabaseHandle
+    var refHandle: DatabaseHandle = 0
     
     var postData = [String]()
     
@@ -29,13 +29,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         ref = Database.database().reference()
         
         //retrive the post
-        refHandle = ref.child("Posts").observe(DataEventType.value, with: { (snapshot) in
-            let postDict = snapshot.value as? [String : AnyObject] ?? [:]
+        refHandle = ref.child("Posts").observe(.childAdded, with: { (snapshot) in
+//            let postDict = snapshot.value as? [String : AnyObject] ?? [:]
             
             //Code to execute when a child is  under "Posts"
             
             //Take the value from the sanpshot and added it to the postData array
-            self.postData.append("")
+            let post = snapshot.value as? String
+            
+            if let actualPost = post {
+                // Append the data to our postData array
+                self.postData.append(actualPost)
+                
+                // reload the table view
+                self.tableView.reloadData()
+            }
+            
         })
     }
     
