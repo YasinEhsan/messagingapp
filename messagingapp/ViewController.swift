@@ -7,19 +7,28 @@
 //
 
 import UIKit
+import FirebaseDatabase
+
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var postData = ["message1", "message2", "message3"]
+    var ref: DatabaseReference!
+    
+    var postData = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
         tableView.delegate = self
         tableView.dataSource = self
+        
+        //Set the firebase reference
+        ref = Database.database().reference()
+        
+        //retrive the post
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
