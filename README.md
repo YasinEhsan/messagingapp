@@ -1,11 +1,11 @@
 # messagingapp
 Learning Firebase thru Youtube tutorial.
 
-__Features__ Used breakpoints
+__Features__ Real time open news forum style post. Could be demod via multiple sideloads.
 
-__Takeaways__ 
+__Takeaways__ Firebase is very doable. Json is dope to parse.
 
-__Challenges__ 
+__Challenges__ Small bugs such as naming addPost addPosr.
 
 ## [Video Link](https://www.youtube.com/watch?v=PMbqo7ue_u0&list=PLMRqhzcHGw1ZRUB86rmNqG15Sr5jV-2NU&index=1)
 
